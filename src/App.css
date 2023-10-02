@@ -1,38 +1,100 @@
-.App {
+*{
+  background-color: rgb(235, 241, 248);
+
+  font-family: 'Montserrat', sans-serif;
+}
+.Nav-Bar{
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 5px 5px 10px #e3e3e3;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.Nav-Bar input{
+  margin-left: 30px;
+  margin-right: 100px;
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+.Nav-Bar select{
+  margin-left: 20px;
+  border: none;
+}
+.Card-Container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribute items evenly */
+  align-content: flex-start; /* Align items at the start of the cross-axis (top) */
+  gap: 10px; 
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.Card{
+  flex: 0 0 calc(30% - 10px); /* Each card takes up 1/3 of the container width with a gap */
+  /* Add styling for your cards here */
+  border: 1px solid #ccc;
+  padding: 20px;
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  box-sizing: border-box; 
   display: flex;
   flex-direction: column;
+  box-shadow: 5px 5px 10px #e3e3e3;
+}
+.Card img{
+  width: 90%;
+  height: 60%;
+}
+.Card-info{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.Card-Price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Card-Price p{
+  font-size: 15px;
+}
+.Card-Price button{
+  background-color: rgb(101, 101, 237);
   color: white;
+  height: 50px;
+  width: 100px;
 }
-
-.App-link {
-  color: #61dafb;
+.Pagination{
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 5px 5px 10px #e3e3e3;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Pagination a{
+  cursor: pointer;
+}
+.Pagination ul{
+  list-style: none;
+  display: flex;
+}
+.Pagination li{
+  height: 20px;
+  width: 20px;
+  background-color: white;
+}
+.Pagination a{
+  text-decoration: none;
+  
 }

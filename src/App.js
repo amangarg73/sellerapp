@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { useState, useEffect, Component } from 'react';
+import Card from './components/Card';
+import Pagination from './components/Pagination';
 import './App.css';
+import NavBar from './components/NavBar';
+import data from './components/file.json'
+const App = () => {
+  const [posts, setPosts] = useState(data);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(6);
 
-function App() {
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+    console.log(currentPosts)
+
+  function next(){
+    setCurrentPage(currentPage+1);
+  }  
+  function prev(){
+    setCurrentPage(currentPage-1);
+  }  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container mt-5'>
+        <NavBar/>
+      <Card Cars={currentPosts} />
+      <Pagination
+        currentPage={currentPage}
+        paginate={paginate}
+        next = {next}
+        prev = {prev}
+      />
     </div>
   );
-}
+};
 
 export default App;
